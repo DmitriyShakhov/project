@@ -1,0 +1,67 @@
+def podschet():
+k1=1.8
+k2=1.3
+k3=0.8
+k4=1.8
+k5=1.0
+k6=1.8
+g=''
+print "k1-k staga voditelya,k2-k region,k3-k moschnosti avto, k4-k kolvo voditeley avto,k5-srok deystviya,k6-k avariynosti"
+# к1- коэфициент стажа водителя.к2- региональный коэфициент к3 -зависит от мощности автомобиля.к4- зависит от количества водителей управляющих авто . к5-зависит от срока действия . к6- зависит от аварийности езды владельца.  
+print 'Vvedite vash stag'
+k1=raw_input(k1)
+k1=float(k1)
+if k1<3 :
+    k1=1.8
+elif k1<5:
+    k1=1.7
+elif k1<10 :
+    k1=1.5
+elif k1<15:
+    k1=1.3
+else :
+    k1=1.1
+print 'Vvedite gorod (Moscow,Mos.Obl,SPB)'
+g=raw_input(k2)
+if g=='Moscow':
+    k2=float(k2)
+    k2=1.8
+elif g=='Mos.Obl':
+    k2=float(k2)
+    k2=1.5
+else :
+    k2=float(k2)
+    k2=1.3
+print 'Vvedite power of avto '
+k3=raw_input(k3)
+k3=float(k3)
+if k3<60:
+    k3=0.5
+elif k3<100:
+    k3=0.8
+elif k3<150 :
+    k3=1.0
+else:
+    k3=1.5
+print 'Vvedite kol-vo voditeley'
+k4=raw_input(k4)
+k4=float(k4)
+if k4>1:
+    k4=1.8
+else :
+    k4=1.0
+print 'Vvedite srok deysviya in  (month)'
+k5=raw_input(k5)
+k5=float(k5)
+if k5<10:
+    k5=0.5
+else :
+    k5=1.0
+print 'Vvedite k6'
+k6=raw_input(k6)
+k6=float(k6)
+k=k1*k2+k3+k4+k5+k6
+total=500
+#Значению тотал присвоена базовая ставка
+total=total*k
+print 'total=', total  
